@@ -1,0 +1,19 @@
+<div class="h2">Your Cart Items:</div>
+<div class="d-flex">
+  <ng-container *ngIf="getCartItems().length">
+    <ng-container *ngFor="let singleBook of getCartItems(); let i=index">
+      <div class="card" style="margin-right: 10px;width: 18rem; height: 500px;">
+        <img [src]="singleBook.image" class="card-img-top" [alt]="singleBook.name" height="300">
+        <div class="card-body justify-content-between">
+          <h5 class="card-title overflow-hidden">{{ singleBook.name | titlecase }} by {{ singleBook.author | titlecase }}</h5>
+          <p class="card-text">{{ singleBook.amount | currency:'INR' }}</p>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+  <ng-container *ngIf="getCartItems().length === 0">
+    <div class="d-flex justify-content-center align-items-center w-100">
+      No items in cart
+    </div>
+  </ng-container>
+</div>

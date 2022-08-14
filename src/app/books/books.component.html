@@ -1,0 +1,6 @@
+<div class="h2">Programming book list!</div>
+<div class="d-flex">
+  <ng-container *ngFor="let singleBook of books; let i=index">
+    <app-book [book]="singleBook"></app-book>
+  </ng-container>
+</div>
