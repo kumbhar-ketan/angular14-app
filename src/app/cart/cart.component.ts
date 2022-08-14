@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from '../types/book';
 import { CartService } from './cart.service';
 
 @Component({
@@ -15,6 +16,10 @@ export class CartComponent implements OnInit {
 
   getCartItems() {
     return this.cartService.get();
+  }
+
+  removeFromCart(book: Book) {
+    this.cartService.remove(book);
   }
 
 }

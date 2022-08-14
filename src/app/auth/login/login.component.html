@@ -1,0 +1,20 @@
+<div class="container d-flex justify-content-center align-items-center" style="height: 80vh;">
+  <div class="card">
+    <div class="card-body">
+      <form class="row g-2" (ngSubmit)="submit()" #myForm="ngForm">
+        <label class="h5 text-center my-3">Login</label>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter E-Mail" [(ngModel)]="form.email" #email="ngModel" required>
+          <div class="text-danger" *ngIf="email.invalid && email.dirty">Please enter email</div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" [(ngModel)]="form.password" #password="ngModel" required>
+          <div class="text-danger" *ngIf="password.invalid && password.dirty">Please enter password</div>
+        </div>
+        <button type="submit" class="btn btn-success w-100" [disabled]="myForm.form.invalid">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

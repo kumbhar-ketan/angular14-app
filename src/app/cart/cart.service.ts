@@ -16,4 +16,8 @@ export class CartService {
   add(book: Book) {
     this.cart.push(book);
   }
+
+  remove(book: Book) {
+    this.cart = this.cart.filter(b => b.name !== book.name);
+  }
 }

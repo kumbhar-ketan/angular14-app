@@ -7,6 +7,9 @@
         <div class="card-body justify-content-between">
           <h5 class="card-title overflow-hidden">{{ singleBook.name | titlecase }} by {{ singleBook.author | titlecase }}</h5>
           <p class="card-text">{{ singleBook.amount | currency:'INR' }}</p>
+          <button (click)="removeFromCart(singleBook)" class="btn btn-primary" style="position: absolute; left: 0px; bottom: 0px; width: 100%;">
+            Remove
+          </button>
         </div>
       </div>
     </ng-container>

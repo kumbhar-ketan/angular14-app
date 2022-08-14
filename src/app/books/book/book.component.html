@@ -3,7 +3,7 @@
   <div class="card-body justify-content-between">
     <h5 class="card-title overflow-hidden">{{ book.name | titlecase }} by {{ book.author | titlecase }}</h5>
     <p class="card-text">{{ book.amount | currency:'INR' }}</p>
-    <button (click)="addToCart()" class="btn btn-primary" style="position: absolute; bottom: 10px; left: 5rem">
+    <button (click)="addToCart()" class="btn btn-primary" style="position: absolute; left: 0px; bottom: 0px; width: 100%;">
       <ng-container *ngIf="!isInCart">Add to Cart</ng-container>
       <ng-container *ngIf="isInCart">Remove from Cart</ng-container>
     </button>
